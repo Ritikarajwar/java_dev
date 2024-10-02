@@ -9,15 +9,15 @@ class palindrome {
             return true;
         }
         
-        int start = 0;
+        int first = 0;
         int last = s.length() - 1;
 
-        while (start <= last) {
-            char currFirst = s.charAt(start);
+        while (first <= last) {
+            char currFirst = s.charAt(first);
             char currLast = s.charAt(last);
              
             if (!Character.isLetterOrDigit(currFirst)) {
-                start++;
+                first++;
             } 
             
             else if (!Character.isLetterOrDigit(currLast)) {
@@ -28,7 +28,7 @@ class palindrome {
                 if (Character.toLowerCase(currFirst) != Character.toLowerCase(currLast)) {
                     return false;
                 }
-                start++;
+                first++;
                 last--;
             }
         }
@@ -40,9 +40,9 @@ class palindrome {
         palindrome sol = new palindrome();
         
         System.out.println("Enter a word or phrase to check if it's a palindrome: ");
-        String userInput = sc.nextLine();
+        String value = sc.nextLine();
         
-        if (sol.isPalindrome(userInput)) {
+        if (sol.isPalindrome(value)) {
             System.out.println("The input is a palindrome.");
         } else {
             System.out.println("The input is not a palindrome.");
